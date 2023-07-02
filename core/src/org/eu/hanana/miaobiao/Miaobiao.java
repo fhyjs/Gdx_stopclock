@@ -4,7 +4,6 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
@@ -29,6 +28,7 @@ public class Miaobiao extends ApplicationAdapter {
 	}
 	@Override
 	public void create () {
+		if (VisUI.isLoaded()) return;
 		batch = new SpriteBatch();
 		skin = new Skin(Gdx.files.internal("skin/uiskin.json"));
 		Skin visskin = new Skin(Gdx.files.internal("skin/x2/uiskin.json"));
@@ -92,14 +92,14 @@ public class Miaobiao extends ApplicationAdapter {
 			try {
 				update();
 				Thread.sleep(10);
-			} catch (InterruptedException e) {
+			} catch (InterruptedException ignored) {
 			}
 		}
 	}
 
 	@Override
 	public void render () {
-		ScreenUtils.clear(1, 0, 0, 1);
+		ScreenUtils.clear(new Color(0x4182a4ff));
 		stage.act(Gdx.graphics.getDeltaTime());
 		stage.draw();
 

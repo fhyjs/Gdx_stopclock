@@ -2,9 +2,7 @@ package org.eu.hanana.miaobiao;
 
 import android.app.Service;
 import android.content.Intent;
-import android.os.Handler;
 import android.os.IBinder;
-import android.util.Log;
 
 public class Timer extends Service {
     private static final String TAG = "TimerService";
