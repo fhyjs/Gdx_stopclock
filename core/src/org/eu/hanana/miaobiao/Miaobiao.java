@@ -45,7 +45,7 @@ public class Miaobiao extends ApplicationAdapter {
 		fps.setPosition(10,20);
 		timeclock=new Label("00:00:00",skin);
 		timeclock.setFontScale(4);
-		table.add(timeclock).width(Gdx.graphics.getWidth()-20).height(100).pad(20);
+		table.add(timeclock).width(Gdx.graphics.getWidth()-20).height(100).pad(200).center();
 		table.row();
 		btn_start=new Button(skin);
 		btn_start.addListener(btnscl=new ClickListener() {
